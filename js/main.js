@@ -159,11 +159,11 @@ spyEls.forEach(function (spyEl) {
       triggerElement: spyEl,  // 보여짐 여부를 감시할 요소를 지정
       triggerHook: .8  // 최상단은 0 이며, 최하단은 1 이라서 거의 끝나는 지점인 0.8을 지정함
     })
-    .setClassToggle(spyEl, 'show')
-    .addTo(new ScrollMagic.Controller());
+    .setClassToggle(spyEl, 'show')  // .scroll-spy라는 클래스에 0.8 이상 스크롤을 내리면 show라는 클래스가 추가됨
+    .addTo(new ScrollMagic.Controller()); 
 });
 
 
 // copyright 현재 날짜 
 const thisYear = document.querySelector('.this-year');
-thisYear.textContent = new Date().getFullYear(); // 2022
+thisYear.textContent = new Date().getFullYear(); // 2022 생성자 함수로 실행해서 현재 날짜로 반환됨
