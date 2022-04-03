@@ -1,25 +1,3 @@
-
-// search 검색창
-const searchEl = document.querySelector('.search');
-const searchInputEl = searchEl.querySelector('input');
-
-searchEl.addEventListener('click', function () {
-  // Logic 입력
-  searchInputEl.focus();
-});
-
-searchInputEl.addEventListener('focus', function () {
-  searchEl.classList.add('focused');
-  searchInputEl.setAttribute('placeholder', '통합검색');
-});
-
-searchInputEl.addEventListener('blur', function () {
-  searchEl.classList.remove('focused');
-  searchInputEl.setAttribute('placeholder', '');
-});
-
-
-
 // 배지 스크롤 
 const badgeEl = document.querySelector('header .badges');
 const toTopEl = document.querySelector('#to-top');
@@ -162,8 +140,3 @@ spyEls.forEach(function (spyEl) {
     .setClassToggle(spyEl, 'show')  // .scroll-spy라는 클래스에 0.8 이상 스크롤을 내리면 show라는 클래스가 추가됨
     .addTo(new ScrollMagic.Controller()); 
 });
-
-
-// copyright 현재 날짜 
-const thisYear = document.querySelector('.this-year');
-thisYear.textContent = new Date().getFullYear(); // 2022 생성자 함수로 실행해서 현재 날짜로 반환됨
